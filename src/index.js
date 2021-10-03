@@ -1,13 +1,8 @@
-/**
- * This file is just a silly example to show everything working in the browser.
- * When you're ready to start on your site, clear the file. Happy hacking!
- **/
+const url = 'https://platzi-avo.vercel.app';
 
-const url = 'https://platzi-avo.vercel.app/api/avo';
-
-// wep api 
+const appNode = document.querySelector('div#app')
 // conectarnos al servidor
-fetch(url)
+fetch(`${url}/api/avo`)
 // procesar la respuesta u convertirla en Json
 .then(response => response.json())
 //JSON -> Data -> Renderizar info browser
@@ -17,18 +12,19 @@ fetch(url)
   responseJson.data.forEach(item => {
     // crear imagen
     const image = document.createElement('img')
+    image.src = `${url}${item.image}`
     // crear titulo
     const title = document.createElement('h2')
+    title.textContent = `${item.name}`
     // crear precio
-    const price = document.createElement('div')
+    const price = document.createElement('p')
+    price.textContent = `Price: $ ${item.price} USD`
     
     const container = document.createElement('div')
-    container.appendChild(image, title, price)
+    container.append(image, title, price)
 
     todosLosItems.push(container)
 
   });
-
-  document.body.append(...todosLosItems);
-
+  appNode.append(...todosLosItems);
 })
