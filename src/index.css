@@ -1,3 +1,28 @@
 @import 'tailwindcss/dist/base.css';
 @import 'tailwindcss/dist/components.css';
 @import 'tailwindcss/dist/utilities.css';
+
+html {
+  font-size: 62.5%;
+}
+
+.card {
+  margin: 1rem;
+}
+#app {
+  display: grid;
+  grid-template: auto / 1fr 1fr;
+}
+.card-text {
+  font-size: 1.5rem ;
+}
+
+.card-title {
+  font-size: 2rem;
+}
+
+@media (max-width: 480px) {
+  #app {
+    display: block;
+  }
+}
