@@ -1,6 +1,15 @@
 const url = 'https://platzi-avo.vercel.app';
 
 const appNode = document.querySelector('div#app')
+
+// api de internacionalización 
+const formatPrice = (price) => {
+  const newPrice = new window.Intl.NumberFormat('en-EN', {
+    style: 'currency',
+    currency: 'USD'
+  }).format(price)
+  return newPrice
+}
 // conectarnos al servidor
 fetch(`${url}/api/avo`)
 // procesar la respuesta u convertirla en Json
@@ -18,10 +27,11 @@ fetch(`${url}/api/avo`)
     title.textContent = `${item.name}`
     // crear precio
     const price = document.createElement('p')
-    price.textContent = `Price: $ ${item.price} USD`
+    price.textContent = formatPrice(item.price)
     
     const container = document.createElement('div')
     container.append(image, title, price)
+    container.className = ''
 
     todosLosItems.push(container)
 
