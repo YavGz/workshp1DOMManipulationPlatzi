@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/Javier-GT-Yav/workshp1DOMManipulationPlatzi",
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
