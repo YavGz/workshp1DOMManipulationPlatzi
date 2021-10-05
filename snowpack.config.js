@@ -5,6 +5,6 @@ module.exports = {
     src: '/_dist_',
   },
   buildOptions: {
-    baseUrl: '',
+    baseUrl: 'git@github.com:Javier-GT-Yav/workshp1DOMManipulationPlatzi.git',
   },
 }
