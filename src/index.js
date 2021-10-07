@@ -2,6 +2,12 @@ const url = 'https://platzi-avo.vercel.app';
 
 const appNode = document.querySelector('div#app')
 
+appNode.addEventListener('click', (event) => {
+  if (event.target.nodeName === 'H2') {
+    alert('Whoops :( Por ahora no tenemos stock de este producto')
+  }
+})
+
 // api de internacionalización 
 const formatPrice = (price) => {
   const newPrice = new window.Intl.NumberFormat('en-EN', {
